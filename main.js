@@ -18,8 +18,13 @@ const app = new Vue({
     },
     
     methods: {
+        // MILESTONE 1
         doIt(index) {
             this.todos[index].isDone = !this.todos[index].isDone;
+        },
+        // MILESTONE 2
+        hide(index) {
+            this.todos.splice(index, 1);
         },
     },
 });
