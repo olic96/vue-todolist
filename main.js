@@ -14,7 +14,12 @@ const app = new Vue({
                 text: 'fare C',
                 isDone: false,
             },
-        ]
+        ],
+        
+        newTodo: {
+            text: '',
+            isDone: false,
+        }, 
     },
     
     methods: {
@@ -25,6 +30,16 @@ const app = new Vue({
         // MILESTONE 2
         hide(index) {
             this.todos.splice(index, 1);
+        },
+        // MILESTONE 3
+        addTodo() {
+            if(this.newTodo.text !== ' ') {
+                this.todos.push(this.newTodo);
+                this.newTodo = {
+                    text:'',
+                    isDone: false,
+                };
+            }
         },
     },
 });
